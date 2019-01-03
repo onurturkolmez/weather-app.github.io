@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/weather.css">
+    <link rel="stylesheet" type="text/css" href="css/weather-icons/weather-icons.css">
+    <link rel="stylesheet" type="text/css" href="css/weather-icons/weather-icons-wind.css">
+    <title>Weather App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+
+<body class="responsiveBody">
+    <div class="container" data-ng-init="init()" ng-app="weatherApp" ng-controller="weatherController">
+
+        <div class="searchContainer">
+            <input placeholder="Enter city name" class="searchInput" id="searchInput" type="text" ng-model="searchText"
+                ng-keydown="fonk($event)">
+            <input class="searchButton" value="GO" ng-click="search()">
+        </div>
+
+        <div class="weatherInfo">
+
+            <div class="units">
+                <div class="itemCel" ng-click="setC()">°C</div>
+                <div class="itemFah" ng-click="setF()">°F</div>
+            </div>
+
+            <div class="today">
+                <div class="centeredFlex">
+                    <div class="city weather">
+                        <p>{{cityName}}</p>
+                        <div class="countryInfo">
+                            <img src="https://www.countryflags.io/{{country}}/shiny/16.png" />
+                            <span>{{country}}</span>
+                        </div>
+                        <i id="icon" class="{{cityWeatherClass}}"></i>
+                        <p class="cel" ng-if="showCel">{{temperatureCelcius}}</p>
+                        <p class="fah" ng-if="!showCel">{{temperatureFahrenheit}}</p>
+                    </div>
+                    <div class="city status">
+                        <p>{{main}}</p>
+                    </div>
+
+                    <div class="city info">
+                        <p>{{wind}}</p>
+                        <p>{{humidity}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="future">
+                <div class="futureContainer" ng-repeat="f in futureData">
+                    <i id="i1" class="{{f.weatherClass}}"></i>
+                    <span id="d1">{{f.day}}</span>
+                    <span class="cel" id="c1" ng-if="showCel">{{f.celcius}}</span>
+                    <span class="cel" id="c1" ng-if="!showCel">{{f.fahrenheit}}</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>

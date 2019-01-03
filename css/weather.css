@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,100');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 15px;
+}
+
+.responsiveBody {
+    background-image: url('../img/background.jpg');
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+.searchContainer {
+    align-self: flex-start;
+}
+
+.searchInput {
+    margin-right: -10px;
+    height: 25px;
+    width: 250px;
+}
+
+.searchButton {
+    background-color: #48739e;
+    color: white;
+    height: 25px;
+    width: 90px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    opacity: 0.8;
+    margin-left: 6px;
+    border: 1px solid #48739e;
+}
+
+.countryInfo {
+    display: flex;
+    height: 16px;
+    justify-content: center;
+}
+
+.countryInfo>img {
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+.countryInfo>span {
+    line-height: 16px;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+.weatherInfo {
+    width: 500px;
+    display: flex;
+    position: absolute;
+    height: 317px;
+    flex: 1;
+}
+
+.units {
+    position: absolute;
+}
+
+.itemCel {
+    display: inline-block;
+    cursor: pointer;
+    background-color: #d5e4f3;
+    color: #48739e;
+    padding-right: 3px;
+    padding-left: 3px;
+}
+
+.itemFah {
+    display: inline-block;
+    cursor: pointer;
+    background-color: #92a9c0;
+    color: white;
+    padding-right: 3px;
+    padding-left: 3px;
+    margin-left: -4px;
+}
+
+.today {
+    display: inline-flex;
+    flex-grow: 1;
+    width: 200px;
+    background-color: #48739e;
+    margin-top: 17px;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.centeredFlex {
+    display: inline-flex;
+    flex-direction: column;
+    align-self: center;
+    flex: 1;
+}
+
+.weather {
+    flex: 3;
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.status {
+    flex: 2;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.info {
+    flex: 1;
+    font-size: 12px;
+}
+
+.city>p,
+i {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    display: block !important;
+}
+
+.city>i {
+    font-size: 40px !important;
+    margin-bottom: 5px !important;
+}
+
+.future {
+    margin-top: 17px;
+    display: inline-flex;
+    flex-grow: 1;
+    width: 200px;
+    background-color: #92a9c0;
+    opacity: 0.8;
+    text-align: center;
+    flex-direction: column;
+}
+
+.future>.futureContainer:not(:last-child) {
+    border-bottom: 1px solid white;
+}
+
+.futureContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.futureContainer>i {
+    font-size: 27px;
+}
