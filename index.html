@@ -16,7 +16,7 @@
         <div class="searchContainer">
             <input placeholder="Enter city name" class="searchInput" id="searchInput" type="text" ng-model="searchText"
                 ng-keydown="fonk($event)">
-            <input class="searchButton" value="GO" ng-click="search()">
+            <input class="searchButton" value="GO" ng-click="search()" ng-disabled='searchText === ""'>
         </div>
 
         <div class="weatherInfo">

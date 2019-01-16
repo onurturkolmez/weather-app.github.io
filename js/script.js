@@ -4,7 +4,8 @@ app.controller('weatherController', function ($scope, $http) {
     //get location and show weather data for that location when page loading
     //if location permission has denied,show default city weather data(ankara)
     $scope.init = function () {
-        var lat = "", lon = "";
+        var lat = "",
+            lon = "";
         var openCageApiKey = "0bd6b0e99eb949f397e21a95bec406c2";
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (pos) {
@@ -54,7 +55,9 @@ app.controller('weatherController', function ($scope, $http) {
                     day = getDayName(day);
 
                     //find maximum and minimum temptatures for that day
-                    var maxTemp = 0, index = i, minTemp = response.data.list[index].main.temp;
+                    var maxTemp = 0,
+                        index = i,
+                        minTemp = response.data.list[index].main.temp;
                     var lastPoint = 0;
                     i + 8 > limit ? lastPoint = limit : lastPoint = i + 8;
 
@@ -66,10 +69,15 @@ app.controller('weatherController', function ($scope, $http) {
                             minTemp = temp;
                     }
 
-                    var celcius = kelvinToCelcius(maxTemp).toString() + "-" + kelvinToCelcius(minTemp).toString() + "°C";
-                    var fahrenheit = kelvinToFahrenheit(maxTemp).toString() + "-" + kelvinToFahrenheit(minTemp).toString() + "°F";
+                    var celcius = kelvinToCelcius(maxTemp).toString() + " - " + kelvinToCelcius(minTemp).toString() + "°C";
+                    var fahrenheit = kelvinToFahrenheit(maxTemp).toString() + " - " + kelvinToFahrenheit(minTemp).toString() + "°F";
 
-                    $scope.futureData.push({ "weatherClass": weatherClass, "day": day, "celcius": celcius, "fahrenheit": fahrenheit });
+                    $scope.futureData.push({
+                        "weatherClass": weatherClass,
+                        "day": day,
+                        "celcius": celcius,
+                        "fahrenheit": fahrenheit
+                    });
                 }
                 //end for future days and for that day's future hours
 
