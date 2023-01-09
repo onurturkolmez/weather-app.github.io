@@ -10,9 +10,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 </head>
 
-<body class="responsiveBody">
+<body class="responsiveBody blur-filter">
     <div class="container" data-ng-init="init()" ng-app="weatherApp" ng-controller="weatherController">
-
         <div class="searchContainer">
             <input placeholder="Enter city name" class="searchInput" id="searchInput" type="text" ng-model="searchText"
                 ng-keydown="fonk($event)">
@@ -27,7 +26,8 @@
             </div>
 
             <div class="today">
-                <div class="centeredFlex">
+                <img ng-if="loading" class="centeredFlex loading" src="https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif" />
+                <div ng-if="!loading" class="centeredFlex">
                     <div class="city weather">
                         <p>{{cityName}}</p>
                         <div class="countryInfo">
@@ -50,7 +50,8 @@
             </div>
 
             <div class="future">
-                <div class="futureContainer" ng-repeat="f in futureData">
+                <img ng-if="loading" class="futureContainer loading" src="https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif" />
+                <div ng-if="!loading" class="futureContainer" ng-repeat="f in futureData">
                     <i id="i1" class="{{f.weatherClass}}"></i>
                     <span id="d1">{{f.day}}</span>
                     <span class="cel" id="c1" ng-if="showCel">{{f.celcius}}</span>
